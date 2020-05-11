@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Task3 {
+public class Task3_1 {
     public static void main(String[] args) {
         System.out.println("Enter numbers separated by a space: ");
         Scanner scanner = new Scanner(System.in);
@@ -19,14 +19,31 @@ public class Task3 {
         }
 
         if (numbers.length < 2) System.out.println("You entered less than 2 numbers");
-        else System.out.println("The first odd number is: "+GetFirstOddNumber(numbers));
+        else
+            {
+            System.out.println("Quantity of odd numbers: "+GetQuantityOfOddNumbers(numbers));
+            System.out.println("Quantity of even numbers: "+GetQuantityOfEvenNumbers(numbers));
+            }
+
     }
 
-    private static int GetFirstOddNumber(int[] numbers)
+    private static int GetQuantityOfOddNumbers(int[] numbers)
     {
-        for (int i = 0; i < numbers.length; i++){
-            if (numbers[i] % 2 != 0) return numbers[i];
+        int count = 0;
+        for (int number : numbers) {
+            if (number % 2 != 0) count++;
         }
-        return 0;
+        return count;
     }
+
+    private static int GetQuantityOfEvenNumbers(int[] numbers)
+    {
+        int count = 0;
+        for (int number : numbers) {
+            if (number != 0 && number % 2 == 0) count++;
+        }
+        return count;
+    }
+
+
 }
