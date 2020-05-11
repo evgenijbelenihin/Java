@@ -8,7 +8,7 @@ public class Task1 {
         Scanner scanner = new Scanner(System.in);
 
         for (int i = 0; i < 3; i++){
-            System.out.print("Enter the " + (i+1) +" number: ");
+            System.out.printf("Enter the %d number: ", i+1);
             numbers[i]=scanner.nextInt();
         }
         System.out.println("Maximum from three entered numbers is: "+ GetMaxFromThreeNumbers(numbers[0],numbers[1],numbers[2]));
